@@ -1,0 +1,10 @@
+#homeNav {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  text-decoration: underline;
+  text-align: center;
+  background-color: #9e5b2b;
+  padding:2%
+}
