@@ -1,24 +1,21 @@
-import React, { useEffect, useReducer } from "react";
-const initialstate = {
-  name: "",
-  email: "",
-  phone: 0,
-  linkdin: "",
-  github: "",
-  password: "",
-};
-const reducer = (state, action) => {};
-function handleSubmit(e) {
-  e.preventDefault();
-  console.log(e)
-}
+import React, { useContext } from "react";
+import { UserContext } from "../App";
+import { useNavigate } from "react-router-dom";
 function Signup() {
-  const [state, dispatch] = useReducer(reducer, initialstate);
+  const userContext = useContext(UserContext);
+  const navigate=useNavigate();
   return (
     <div id="signuppage">
       <nav id="homeNav">TakeNote</nav>
       <h2 id="signuphead">SignUp</h2>
-      <form id="signupForm" onSubmit={handleSubmit}>
+      <form
+        id="signupForm"
+        onSubmit={(e) => {
+          e.preventDefault();
+          userContext.userDispatch(e);
+          navigate('/')
+        }}
+      >
         <label htmlFor="Name">Name</label>
         <br />
         <input type="text" name="Name" className="signupinput" />
@@ -45,6 +42,11 @@ function Signup() {
         <br />
         <input type="submit" value="SignUp" id="submitButton" />
       </form>
+      {/* <button
+        onClick={() => {
+          console.log(userContext.userDetail);
+        }}
+      >click me</button> */}
     </div>
   );
 }
