@@ -5,6 +5,9 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/signup";
+import Notes from "./components/Notes";
+import { AuthProvider } from "./components/auth";
+import { RequireAuth } from "./components/RequireAuth";
 const initialstate = {
   name: "",
   email: "",
@@ -27,16 +30,31 @@ export const UserContext = React.createContext();
 function App() {
   const [state, dispatch] = useReducer(reducer, initialstate);
   return (
-    <UserContext.Provider value={{ userDetail: state, userDispatch: dispatch }}>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="Login" element={<Login />} />
-          <Route path="SignUp" element={<Signup />} />
-        </Routes>
-        <Footer />
-      </div>
-    </UserContext.Provider>
+    <AuthProvider>
+      <UserContext.Provider
+        value={{
+          userDetail: state,
+          userDispatch: dispatch,
+        }}
+      >
+        <div className="App">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="Login" element={<Login />} />
+            <Route path="SignUp" element={<Signup />} />
+            <Route
+              path="notes"
+              element={
+                <RequireAuth>
+                  <Notes />
+                </RequireAuth>
+              }
+            />
+          </Routes>
+          <Footer />
+        </div>
+      </UserContext.Provider>
+    </AuthProvider>
   );
 }
 

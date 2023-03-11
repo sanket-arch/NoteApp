@@ -65,7 +65,8 @@ i {
 }
 
 /* SignUp page */
-#signuphead {
+#signuphead,
+#loginHead {
   text-align: center;
   font-size: 2rem;
   line-height: 2;
@@ -73,11 +74,13 @@ i {
 #signupForm {
   padding: 5%;
 }
-#signupForm label {
+#signupForm label,
+#loginForm label {
   font-size: 1.2rem;
   line-height: 1.4;
 }
-#signupForm .signupinput {
+#signupForm .signupinput,
+#loginForm .logininput {
   font-size: 1em;
   padding: 3%;
   width: 85%;
@@ -85,7 +88,9 @@ i {
   border: 1.2px solid #9e5b2b;
   border-radius: 25px;
 }
-#submitButton {
+#submitButton,
+#loginButton,
+#goBackButton {
   display: block;
   width: 60vw;
   margin: 4% auto;
@@ -94,4 +99,21 @@ i {
   border: 1.2px solid #9e5b2b;
   border-radius: 25px;
   background-color: antiquewhite;
+}
+
+/* Login page */
+#loginHead {
+  margin-top: 30%;
+}
+#loginForm {
+  width: 80%;
+  margin: auto;
+  padding: 5%;
+}
+
+#loginButton,
+#goBackButton {
+  display: block;
+  width: 40vw;
+  margin-bottom: 1.2%;
 }

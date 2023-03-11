@@ -1,14 +1,11 @@
-import React,{useContext} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "../App";
 function getHour() {
   let hour = new Date().getHours;
-  console.log(hour);
   if (hour > 1 && hour < 12) return 1;
   else return 2;
 }
 function Home() {
-  const userdetails=useContext(UserContext);
   return (
     <div>
       <nav id="homeNav">TakeNote</nav>

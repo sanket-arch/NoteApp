@@ -3,7 +3,10 @@ import { UserContext } from "../App";
 import { useNavigate } from "react-router-dom";
 function Signup() {
   const userContext = useContext(UserContext);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
+  const handleBack = () => {
+    navigate(-1);
+  };
   return (
     <div id="signuppage">
       <nav id="homeNav">TakeNote</nav>
@@ -13,20 +16,20 @@ function Signup() {
         onSubmit={(e) => {
           e.preventDefault();
           userContext.userDispatch(e);
-          navigate('/')
+          navigate("/");
         }}
       >
         <label htmlFor="Name">Name</label>
         <br />
-        <input type="text" name="Name" className="signupinput" />
+        <input type="text" name="Name" className="signupinput" required />
         <br />
         <label htmlFor="Email">Email</label>
         <br />
-        <input type="email" name="Email" className="signupinput" />
+        <input type="email" name="Email" className="signupinput" required />
         <br />
         <label htmlFor="Phone">Phone</label>
         <br />
-        <input type="text" name="Phone" className="signupinput" />
+        <input type="text" name="Phone" className="signupinput" required />
         <br />
         <label htmlFor="linkdin">linkdIn Username</label>
         <br />
@@ -38,9 +41,20 @@ function Signup() {
         <br />
         <label htmlFor="password">password</label>
         <br />
-        <input type="password" name="password" className="signupinput" />
+        <input
+          type="password"
+          name="password"
+          className="signupinput"
+          required
+        />
         <br />
         <input type="submit" value="SignUp" id="submitButton" />
+        <input
+          type="button"
+          value="Go back"
+          id="goBackButton"
+          onClick={handleBack}
+        />
       </form>
       {/* <button
         onClick={() => {
