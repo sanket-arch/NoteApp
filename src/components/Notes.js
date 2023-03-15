@@ -1,27 +1,48 @@
-import React, { useContext } from "react";
-import { UserContext } from "../App";
-import { useAuth } from "./auth";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import Navbar from "./Navbar";
 import Notecard from "./Notecard";
 function Notes() {
-  const auth = useAuth();
-  const userContext = useContext(UserContext);
-  const navigate = useNavigate();
-  const handleLogout = () => {
-    auth.logout();
-    navigate("/");
-  };
-
-  return (
+    return (
     <div>
       <Navbar />
       <input type="text" placeholder="Search Title" id="searchBox" />
       <div id="notesArea">
-        <Notecard />
+        <Notecard
+          noteHead="Study DOS"
+          noteBody="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        repellendus similique rem, ut modi velit corrupti obcaecati dicta culpa
+        nesciunt illum dolorum optio dolores voluptate, eum et iste! Similique,
+        illum!"
+        />
+        <Notecard
+          noteHead="Study DOS"
+          noteBody="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        repellendus similique rem, ut modi velit corrupti obcaecati dicta culpa
+        nesciunt illum dolorum optio dolores voluptate, eum et iste! Similique,
+        illum!"
+        />
+        <Notecard
+          noteHead="Study DOS"
+          noteBody="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        repellendus similique rem, ut modi velit corrupti obcaecati dicta culpa
+        nesciunt illum dolorum optio dolores voluptate, eum et iste! Similique,
+        illum!"
+        />
+        <Notecard
+          noteHead="Study DOS"
+          noteBody="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        repellendus similique rem, ut modi velit corrupti obcaecati dicta culpa
+        nesciunt illum dolorum optio dolores voluptate, eum et iste! Similique,
+        illum!"
+        />
+        <Notecard
+          noteHead="Study DOS"
+          noteBody="Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
+        repellendus similique rem, ut modi velit corrupti obcaecati dicta culpa
+        nesciunt illum dolorum optio dolores voluptate, eum et iste! Similique,
+        illum!"
+        />
       </div>
-      welcome {userContext.userDetail.name}
-      <button onClick={handleLogout}>LOG OUT</button>
     </div>
   );
 }

@@ -1,16 +1,13 @@
 import React from "react";
 
-function Notecard() {
+function Notecard(props) {
   return (
     <div className="NoteCard">
-      <h4 className="notehead">Study DOS</h4>
+      <h4 className="notehead">{props.noteHead}</h4>
       <p className="noteBody">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi
-        repellendus similique rem, ut modi velit corrupti obcaecati dicta culpa
-        nesciunt illum dolorum optio dolores voluptate, eum et iste! Similique,
-        illum!
+        {props.noteBody}
       </p>
-      <div className="buttons">
+      <div className="cardButtons">
         <button className="viewButton">View</button>
         <button className="deleteButton">Delete</button>
       </div>

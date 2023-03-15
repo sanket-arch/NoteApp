@@ -7,7 +7,7 @@ function getHour() {
 }
 function Home() {
   return (
-    <div>
+    <div id="homeBody">
       <nav id="homeNav">TakeNote</nav>
       <div id="salutation">
         Good <br />

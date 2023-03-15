@@ -6,8 +6,10 @@ import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/signup";
 import Notes from "./components/Notes";
+import TakeNotes from "./components/TakeNotes";
 import { AuthProvider } from "./components/auth";
 import { RequireAuth } from "./components/RequireAuth";
+import Profile from "./components/Profile";
 const initialstate = {
   name: "",
   email: "",
@@ -50,8 +52,24 @@ function App() {
                 </RequireAuth>
               }
             />
+            <Route
+              path="addnotes"
+              element={
+                <RequireAuth>
+                  <TakeNotes />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="profile"
+              element={
+                <RequireAuth>
+                  <Profile />
+                </RequireAuth>
+              }
+            />
           </Routes>
-          {/* <Notes/> */}
+          {/* <TakeNotes /> */}
           <Footer />
         </div>
       </UserContext.Provider>
