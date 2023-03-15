@@ -117,3 +117,69 @@ i {
   width: 40vw;
   margin-bottom: 1.2%;
 }
+
+/* navBar */
+#NavBar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #9e5b2b;
+  padding: 4%;
+}
+#logo {
+  font-family: "Rubik", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  text-decoration: underline;
+}
+#menuHamburgur {
+  background-color: #9e5b2b;
+  border: 0;
+}
+#menuHamburgur i {
+  font-size: 2rem;
+}
+
+/* NoteCard */
+.NoteCard {
+  border: 2px solid black;
+  padding: 3%;
+  width: 80vw;
+  margin: 6% auto;
+  border-radius: 19px;
+}
+.notehead {
+  line-height: 1.2;
+  font-weight: 400;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.noteBody {
+  text-align: justify;
+  margin: 2% auto;
+  padding: 2%;
+}
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 50%;
+  padding: 2.3%;
+  margin: auto;
+}
+.viewButton,
+.deleteButton {
+  width: 45%;
+  background-color: #fff;
+  border: 0;
+  font-size: 1.3rem;
+  text-decoration: underline;
+}
+/* NotesPage */
+#searchBox {
+  display: block;
+  width: 80vw;
+  margin: 6% auto;
+  padding: 3%;
+  border: 2px solid black;
+  border-radius: 15px;
+}

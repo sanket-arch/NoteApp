@@ -51,6 +51,7 @@ function App() {
               }
             />
           </Routes>
+          {/* <Notes/> */}
           <Footer />
         </div>
       </UserContext.Provider>
