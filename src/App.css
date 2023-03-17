@@ -200,3 +200,37 @@ i {
   border: 2px solid black;
   border-radius: 15px;
 }
+
+/* AddNote page */
+#NotePage form {
+  padding: 3%;
+  width: 85%;
+  margin: auto;
+}
+#NotePage label {
+  font-size: 1.2em;
+}
+#AddNoteHead {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 4;
+}
+#noteTitle,
+#NotePage textarea {
+  font-size: 1em;
+  padding: 4%;
+  width: 85%;
+  margin-top: 1.4%;
+  border: 1.2px solid #9e5b2b;
+  border-radius: 25px;
+}
+#AddNoteButton {
+  display: block;
+  width: 40vw;
+  margin: 4% auto;
+  padding: 2%;
+  line-height: 2;
+  border: 1.2px solid #9e5b2b;
+  border-radius: 25px;
+  font-size: 1.2em;
+}

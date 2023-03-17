@@ -69,7 +69,6 @@ function App() {
               }
             />
           </Routes>
-          {/* <TakeNotes /> */}
           <Footer />
         </div>
       </UserContext.Provider>

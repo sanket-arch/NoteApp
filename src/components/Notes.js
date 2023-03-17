@@ -1,8 +1,9 @@
 import React from "react";
 import Navbar from "./Navbar";
 import Notecard from "./Notecard";
+
 function Notes() {
-    return (
+  return (
     <div>
       <Navbar />
       <input type="text" placeholder="Search Title" id="searchBox" />
