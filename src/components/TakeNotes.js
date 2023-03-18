@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useContext } from "react";
 import Navbar from "./Navbar";
+import { NoteContext } from "../App";
 function TakeNotes() {
+  const notecontext = useContext(NoteContext);
   return (
     <div id="NotePage">
       <Navbar />
       <h3 id="AddNoteHead">Add Notes</h3>
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          notecontext.noteDispatch(e);
+        }}
+      >
         <label htmlFor="title">Title</label>
         <br />
         <input type="text" name="title" id="noteTitle" placeholder="Title" />

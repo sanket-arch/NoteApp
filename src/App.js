@@ -18,7 +18,7 @@ const initialstate = {
   github: "",
   password: "",
 };
-const reducer = (state, action) => {
+const reducerUser = (state, action) => {
   return {
     name: action.target[0].value,
     email: action.target[1].value,
@@ -28,15 +28,30 @@ const reducer = (state, action) => {
     password: action.target[5].value,
   };
 };
+
 export const UserContext = React.createContext();
+const note = {
+  title: "",
+  noteBody: "",
+};
+
+const recducerNotes = (state, action) => {
+  return {
+    title: action.target[0].value,
+    noteBody: action.target[1].value,
+  };
+};
+
+export const NoteContext = React.createContext();
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialstate);
+  const [state, dispatchUser] = useReducer(reducerUser, initialstate);
+  const [Note, dispatchNotes] = useReducer(recducerNotes, note);
   return (
     <AuthProvider>
       <UserContext.Provider
         value={{
           userDetail: state,
-          userDispatch: dispatch,
+          userDispatch: dispatchUser,
         }}
       >
         <div className="App">
@@ -44,11 +59,17 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="Login" element={<Login />} />
             <Route path="SignUp" element={<Signup />} />
+
             <Route
               path="notes"
               element={
                 <RequireAuth>
-                  <Notes />
+                  {" "}
+                  <NoteContext.Provider
+                    value={{ noteDetail: Note, noteDispatch: dispatchNotes }}
+                  >
+                    <Notes />
+                  </NoteContext.Provider>
                 </RequireAuth>
               }
             />
@@ -56,10 +77,16 @@ function App() {
               path="addnotes"
               element={
                 <RequireAuth>
-                  <TakeNotes />
+                  {" "}
+                  <NoteContext.Provider
+                    value={{ noteDetail: Note, noteDispatch: dispatchNotes }}
+                  >
+                    <TakeNotes />{" "}
+                  </NoteContext.Provider>
                 </RequireAuth>
               }
             />
+
             <Route
               path="profile"
               element={
@@ -69,6 +96,7 @@ function App() {
               }
             />
           </Routes>
+
           <Footer />
         </div>
       </UserContext.Provider>
