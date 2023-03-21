@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import React, { useReducer } from "react";
 import "./App.css";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Signup from "./components/signup";
