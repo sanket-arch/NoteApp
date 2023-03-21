@@ -96,8 +96,7 @@ function App() {
               }
             />
           </Routes>
-
-          <Footer />
+          {/* <Footer /> */}
         </div>
       </UserContext.Provider>
     </AuthProvider>

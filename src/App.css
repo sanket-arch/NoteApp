@@ -234,3 +234,48 @@ i {
   border-radius: 25px;
   font-size: 1.2em;
 }
+
+/* Profile Pic */
+#userInfro {
+}
+#profilePic {
+  font-size: 4em;
+  background-color: antiquewhite;
+  padding: 4%;
+  border-radius: 60px;
+  width: fit-content;
+  margin: 12% auto 6%;
+}
+
+#name {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2em;
+}
+.userSocials {
+  padding: 4%;
+}
+#contacts-details {
+  width: 70%;
+  padding: 4%;
+  margin: auto;
+}
+#contacts-details label {
+  font-size: 1.3em;
+  text-decoration: underline;
+}
+#contacts-details p {
+  font-size: 1.2em;
+  padding: 4%;
+  margin: 4% 0;
+  background-color: antiquewhite;
+}
+
+#changePassword {
+  padding: 5%;
+  border: 0;
+  border-radius: 25px;
+  width: 70%;
+  margin-left: 14%;
+  font-size: 1.2em;
+}
